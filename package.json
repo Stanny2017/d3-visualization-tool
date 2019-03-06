@@ -1,0 +1,24 @@
+{
+  "name": "d3-web-visualization",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [
+    "D3",
+    "data visualization"
+  ],
+  "author": "stanny1993",
+  "license": "ISC",
+  "dependencies": {
+    "antd": "^3.10.7",
+    "next": "^7.0.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1"
+  }
+}
