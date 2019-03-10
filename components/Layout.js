@@ -8,10 +8,10 @@ const Layout = (props) => {
             </div>
             <style jsx>{`
                 .content{
-                    width:50%;
+                    width:75%;
                     margin:0 auto;
-                    padding-top:50px;
-                    padding-right:15%;
+                    padding-top:0px;
+                    padding-right:0px;
                     box-sizing:border-box;
                 }
             `}

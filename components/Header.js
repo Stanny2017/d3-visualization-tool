@@ -49,7 +49,7 @@ const Header = () => (
         }
         .wrapper .content{
             width:50%;
-            margin: 0 auto;
+            margin: 0 25%;
             height: 100%;
             
         }
