@@ -6,9 +6,10 @@ const Layout = (props) => {
             <div className="content">
                 {props.children}
             </div>
+
             <style jsx>{`
                 .content{
-                    width:75%;
+                    width:65%;
                     margin:0 auto;
                     padding-top:0px;
                     padding-right:0px;

@@ -48,8 +48,8 @@ const Header = () => (
             padding:20px 0;
         }
         .wrapper .content{
-            width:50%;
-            margin: 0 25%;
+            width:65%;
+            margin: 0 auto;
             height: 100%;
             
         }
