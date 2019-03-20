@@ -44,49 +44,9 @@ const imgs = [
     },
 ]
 
-const BigImg = (props) => {
-    return (
-        <div>
-            <div className="img-absolute">
-                <img src={props.src} className="big-img"></img>
-                <style jsx>{`
-                    .img-absolute{
-                        width:50%;
-                        position: absolute;
-                        top: 100px;
-                        left: 0px;
-                        right: 0px;
-                        bottom: 100px;
-                        margin: 0 auto;
-                        min-height: 450px;
-                        background: white;
-                    }
-                    .big-img {
-                        width: 100%;
-                        height auto;
-                    }
-                `}</style>
-            </div>
-        </div>
-    )
-}
-
-class Artical extends React.Component {
+class ChartExamples extends React.Component {
     state = {
         src: "",
-    }
-
-    handleClick = (e) => {
-        var now = this.state.src;
-        if (now) {
-            this.setState({
-                src: ""
-            });
-        } else {
-            this.setState({
-                src: e.target.src
-            })
-        }
     }
 
     render() {
@@ -94,24 +54,45 @@ class Artical extends React.Component {
             <div>
                 <div className="img-content">
 
-                    {imgs.map(item => {
-                        return (
-                            <div key={item.key} className="colDiv">
-                                <img key={item.key} src={item.url} className="imgCol" onClick={this.handleClick}
-                                ></img>
-                                <br />
-                                <label className="textStyle" key={item.title}>{item.title}</label>
-                            </div>
-                        )
-                    })}
+                    {
+                        imgs.map(item => {
+                            return (
+                                <div className="img-box" key={item.key}>
+                                    <div key={item.title} className="colDiv">
+                                        <img src={item.url} className="imgCol" />
+                                        <br />
+                                        <label className="textStyle" >{item.title}</label>
+                                    </div>
+
+                                    <div className="img-cover"><h2>创建{item.title}</h2></div>
+                                </div>
+                            )
+                        })
+                    }
                     <style jsx>{`
-                        .artical-item{
-                            margin-bottom:70px;
-                            list-style:none;
+                        .img-box{
+                            position:relative;
                         }
-                        .artical-item>h1:hover{
+
+                        .img-box>.img-cover{
+                            position:absolute;
+                            left:0;
+                            top:0;
+                            opacity:0;
+                            width:100%;
+                            height:100%;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+
+                        }
+
+                        .img-box:hover .img-cover{
                             cursor:pointer;
+                            opacity:0.6;
+                            background:grey;
                         }
+                    
                         .img-content{
                             width:100%;
                             display: grid;
@@ -121,16 +102,20 @@ class Artical extends React.Component {
                             margin-top: 30px;
                             min-height: 450px;
                         }
+
                         .colDiv{
                             text-align: center;
                         }
+
                         .col{
                             background: white;
                         }
+
                         .imgCol {
                             width:100%;
-                            height:90%;
+                            height:180px;
                         }
+
                         .textStyle {
                             position: relative;
                             bottom: 0px;
@@ -138,9 +123,6 @@ class Artical extends React.Component {
                         }
                     `}</style>
                 </div>
-                {
-                    this.state.src ? <BigImg src={this.state.src} onClick={() => alert('abc')}></BigImg> : null
-                }
             </div>
         )
     }
@@ -150,7 +132,7 @@ class Artical extends React.Component {
 export default () => {
     return (
         <Layout>
-            <Artical></Artical>
+            <ChartExamples></ChartExamples>
         </Layout>
     )
 }
